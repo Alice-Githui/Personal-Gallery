@@ -34,9 +34,9 @@ class Category(models.Model):
         return self.name
 
 class Image(models.Model):
-    image= models.ImageField()
+    image= models.ImageField(upload_to='articles/')
     image_name=models.CharField(max_length=400)
-    description=models.CharField(max_length=400)
+    description=models.TextField()
     location=models.ForeignKey(Location, on_delete=models.CASCADE)
     category=models.ForeignKey(Category, on_delete=models.CASCADE)
 
@@ -48,6 +48,7 @@ class Image(models.Model):
 
     def update_category(self, image_name):
         self.update()
+
 
     def __str__(self):
         return self.image_name
