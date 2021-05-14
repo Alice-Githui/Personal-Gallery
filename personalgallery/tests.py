@@ -23,21 +23,53 @@ class ImageTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.image1, Image))
 
+    def test_save_image(self):
+        self.image1.save_image()
+        images=Image.objects.all()
+        self.assertTrue(len(images)>0)
+
     def tearDown(self):
         Image.objects.all().delete()
         Location.objects.all().delete()
         Category.objects.all().delete()
 
 
-# class LocationTestClass(TestCase):
-#     #setUpmethod
-#     def setUp(self):
-#         self.park=Park(name="park")
-#         self.park.save_location()
+class LocationTestClass(TestCase):
 
-# class CategoryTestClass(TestCase):
-#     #setUpmethod
+    #setUpmethod
+    def setUp(self):
+        self.park=Location(name="park")
 
-#     def setUp(self):
-#         self.outside = Category(name="outside")
-#         self.outside.save_category()
+    def tearDown(self):
+        Location.objects.all().delete()
+    
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.park, Location))
+
+    #save test
+    def test_save_location(self):
+        self.park.save_location()
+        location=Location.objects.all()
+        self.assertTrue(len(location) > 0)
+
+
+class CategoryTestClass(TestCase):
+    #setUpmethod
+
+    def setUp(self):
+        self.outside = Category(name="outside")
+
+    def tearDown(self):
+        Location.objects.all().delete()
+    
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.outside, Category))
+
+    #save test
+    def test_save_category(self):
+        self.outside.save_category()
+        category=Category.objects.all()
+        self.assertTrue(len(category) > 0)
+
