@@ -11,6 +11,9 @@ class Location(models.Model):
     def delete_location(self):
         self.delete()
 
+    def update_location(self, name):
+        self.update()
+
     def __str__(self):
         return self.name
 
@@ -22,6 +25,10 @@ class Category(models.Model):
 
     def delete_category(self):
         self.delete()
+
+    def update_category(self, name):
+        self.update()
+
 
     def __str__(self):
         return self.name
@@ -38,6 +45,9 @@ class Image(models.Model):
 
     def delete_image(self):
         self.delete()
+
+    def update_category(self, image_name):
+        self.update()
 
     def __str__(self):
         return self.image_name

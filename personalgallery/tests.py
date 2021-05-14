@@ -39,6 +39,11 @@ class ImageTestClass(TestCase):
         self.image1.delete_image()
         self.assertEqual(len(images), 0)
 
+    def test_update_image(self):
+        self.image1.save_image()
+        Image.objects.filter(image_name="Elephant Portrait").update(image_name='image2')
+        self.assertTrue(Image.objects.get(image_name="image2"))
+
 
 class LocationTestClass(TestCase):
 
@@ -68,6 +73,11 @@ class LocationTestClass(TestCase):
         self.outside.delete_location()
         self.assertEqual(len(location), 0)
 
+    def test_update_location(self):
+        self.park.save_location()
+        Location.objects.filter(name="park").update(name="cafe")
+        self.assertTrue(Location.objects.get(name="cafe"))
+
 
 class CategoryTestClass(TestCase):
     #setUpmethod
@@ -95,5 +105,10 @@ class CategoryTestClass(TestCase):
 
         self.outside.delete_category()
         self.assertEqual(len(category), 0)
+
+    def test_update_category(self):
+       self.outside.save_category()
+       Category.objects.filter(name="outside").update(name="inside")
+       self.assertTrue(Category.objects.get(name="inside"))
 
 
