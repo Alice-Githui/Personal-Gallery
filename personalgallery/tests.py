@@ -23,10 +23,10 @@ class ImageTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.image1, Image))
 
-    # def tearDown(self):
-    #     Image.objects.all().delete()
-    #     Location.objects.all().delete()
-    #     Category.objects.all.delete()
+    def tearDown(self):
+        Image.objects.all().delete()
+        Location.objects.all().delete()
+        Category.objects.all().delete()
 
 
 # class LocationTestClass(TestCase):

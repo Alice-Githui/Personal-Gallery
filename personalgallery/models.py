@@ -8,6 +8,9 @@ class Location(models.Model):
     def save_location(self):
         self.save()
 
+    def delete_location(self):
+        self.delete()
+
     def __str__(self):
         return self.name
 
@@ -16,6 +19,9 @@ class Category(models.Model):
 
     def save_category(self):
         self.save()
+
+    def delete_category(self):
+        self.delete()
 
     def __str__(self):
         return self.name
@@ -29,6 +35,9 @@ class Image(models.Model):
 
     def save_image(self):
         self.save()
+
+    def delete_image(self):
+        self.delete()
 
     def __str__(self):
         return self.image_name
