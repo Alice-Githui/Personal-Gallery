@@ -23,15 +23,21 @@ class ImageTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.image1, Image))
 
+    def tearDown(self):
+        Image.objects.all().delete()
+        Location.objects.all().delete()
+        Category.objects.all().delete()
+
     def test_save_image(self):
         self.image1.save_image()
         images=Image.objects.all()
         self.assertTrue(len(images)>0)
 
-    def tearDown(self):
-        Image.objects.all().delete()
-        Location.objects.all().delete()
-        Category.objects.all().delete()
+    def test_delete_image(self):
+        images=Image.objects.all()
+
+        self.image1.delete_image()
+        self.assertEqual(len(images), 0)
 
 
 class LocationTestClass(TestCase):
@@ -54,6 +60,15 @@ class LocationTestClass(TestCase):
         self.assertTrue(len(location) > 0)
 
 
+    def test_delete_location(self):
+        self.outside=Location(name="outside")
+        self.outside.save_location()
+        location=Location.objects.all()
+
+        self.outside.delete_location()
+        self.assertEqual(len(location), 0)
+
+
 class CategoryTestClass(TestCase):
     #setUpmethod
 
@@ -72,4 +87,13 @@ class CategoryTestClass(TestCase):
         self.outside.save_category()
         category=Category.objects.all()
         self.assertTrue(len(category) > 0)
+
+    def test_delete_category(self):
+        self.outside=Category(name="wildlife")
+        self.outside.save_category()
+        category=Category.objects.all()
+
+        self.outside.delete_category()
+        self.assertEqual(len(category), 0)
+
 
