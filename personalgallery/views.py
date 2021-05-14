@@ -3,4 +3,4 @@ from django.http import HttpResponse, Http404
 
 # Create your views here.
 def index(request):
-    return HttpResponse('Welcome to my personal gallery app')
+    return render(request, 'personalgallery/index.html')
