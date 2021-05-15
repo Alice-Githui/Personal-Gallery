@@ -50,6 +50,12 @@ class Image(models.Model):
         self.update()
 
 
+    def search_image(category):
+        images=Image.objects.filter(category__name=category)
+        # print(images)
+        return images
+
+
     def __str__(self):
         return self.image_name
 
