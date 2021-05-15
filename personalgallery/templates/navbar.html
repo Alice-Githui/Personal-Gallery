@@ -1,6 +1,6 @@
 
 <div>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7AF5F5">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7AF5F5; height: 80px;">
         <a class="navbar-brand" href="{% url 'indexpage' %}">MY GALLERY APP</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,12 +8,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" routerLink="home" routerLinkActive="active">Wildlife<span
-                        class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" routerLink="/repos" routerLinkActive='active' id="repos" href="#">Portraits</a>
-                <a class="nav-item nav-link" routerLink="/repos" routerLinkActive='active' id="repos" href="#">Beauty</a>
-                <a class="nav-item nav-link" routerLink="/repos" routerLinkActive='active' id="repos" href="#">Randoms</a>
-                <a class="nav-item nav-link" routerLink="/repos" routerLinkActive='active' id="repos" href="#">Food</a>
+                {% for category in categories %}
+                <a class="nav-item nav-link" routerLink="/repos" routerLinkActive='active' id="repos" href="#">{{category.name}}</a>
+                {% endfor %}
             </div>
         </div>
     </nav>

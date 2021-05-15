@@ -5,4 +5,5 @@ from .models import Image, Location,Category
 # Create your views here.
 def index(request):
     images=Image.objects.all()  
-    return render(request, 'personalgallery/index.html', {"images":images})
+    categories=Category.objects.all()
+    return render(request, 'personalgallery/index.html', {"images":images, "categories": categories})
