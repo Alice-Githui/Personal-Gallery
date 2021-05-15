@@ -1,4 +1,6 @@
 *{
+    box-sizing: border-box;
+    padding: 0;
     margin: 0;
 }
 h1{
@@ -8,4 +10,21 @@ h1{
 .image-card{
     margin-top:10px;
 }
+.image-card a img{
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
 
+#oneimagepage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+#indexoneimage{
+    display: none;
+}

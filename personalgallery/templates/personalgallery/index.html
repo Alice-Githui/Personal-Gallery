@@ -11,11 +11,15 @@
             {% include 'navbar.html' %}
             {% for image in images %}
             <div class="col-md-4 image-card">
-                <a href="{% url 'viewPhoto' image.id %}"><img src="{{ image.image.url }}" alt="{{ image.description }}" class="img-responsive"></a>
+                <a href="#"><img src="{{ image.image.url }}" alt="{{ image.description }}" class="img-responsive"></a>
+                <!-- <h3>Shot at: {{image.location}} for {{image.category}} Category</h3> -->
+            </div>
+            <div id="indexoneimage">
+                {% include 'personalgallery/oneimage.html' %}
             </div>
             {% empty %}
             <h3><strong><em>No Photos</em></strong></h3>
-            {% endfor %}       
+            {% endfor %}
 
         </div>
     </div>
