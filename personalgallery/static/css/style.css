@@ -1,3 +1,14 @@
+*{
+    margin: 0;
+}
 h1{
     color: green;
+}
+
+.image-card{
+    margin-top:10px;
+}
+
+.app-header{
+    text-align: center;
 }
