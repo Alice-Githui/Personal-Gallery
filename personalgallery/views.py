@@ -7,7 +7,8 @@ def index(request):
     category=request.GET.get('category')
     images=Image.objects.all()  
     categories=Category.objects.all()
-    return render(request, 'personalgallery/index.html', {"images":images, "categories": categories})
+    location=Location.objects.all()
+    return render(request, 'personalgallery/index.html', {"images":images, "categories": categories, "location":location})
 
 def viewPhoto(request, pk):
     image=Image.objects.get(id=pk)  

@@ -1,7 +1,7 @@
 
 <div>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #7AF5F5; height: 80px;">
-        <a class="navbar-brand" href="{% url 'indexpage' %}">MY GALLERY APP</a>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #D2B48C; height: 80px;">
+        <a class="navbar-brand" href="{% url 'indexpage' %}" style="font-size: 18px;">MY GALLERY APP</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 {% for category in categories %}
-                <a class="nav-item nav-link" routerLink="/repos" routerLinkActive='active' id="repos" href="#">{{category.name}}</a>
+                <a class="nav-item nav-link" routerLink="/repos" routerLinkActive='active' id="repos" href="#" style="font-size: 14px">{{category.name}}</a>
                 {% endfor %}
             </div>
         </div>

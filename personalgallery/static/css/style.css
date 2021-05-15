@@ -28,3 +28,17 @@ h1{
 #indexoneimage{
     display: none;
 }
+#indexpageimage{
+    background-image: url("../Images/backgroung.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#indexpageimage a{
+    font-size: 16px;
+    text-align: right;
+    justify-content: right;
+    align-items: flex-end;
+    color: white;
+}

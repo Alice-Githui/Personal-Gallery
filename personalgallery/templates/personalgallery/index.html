@@ -4,8 +4,10 @@
 {{block.super}}
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-3">
-
+        <div class="col-md-3" id="indexpageimage">
+            {% for location in location %}
+                <a class="nav-item nav-link" routerLink="/repos" routerLinkActive='active' id="repos" href="#">{{location.name}}</a>
+                {% endfor %}
         </div>
         <div class="col-md-9">
             {% include 'navbar.html' %}
