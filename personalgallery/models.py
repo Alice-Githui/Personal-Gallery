@@ -55,6 +55,12 @@ class Image(models.Model):
         # print(images)
         return images
 
+    def filter_by_location(location):
+        limages=Image.objects.filter(location__name=location)
+        print(limages)
+        return limages
+
+
 
     def __str__(self):
         return self.image_name

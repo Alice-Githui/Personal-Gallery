@@ -24,3 +24,15 @@ def show_category(request):
     else:
         message="You have not searched any category"
         return render(request, 'personalgallery/search.html', {"message":message})
+
+def show_by_location(request):
+    if 'places' in request.GET and request.GET['places']:
+        location=request.GET.get('places')
+        searched_locations=Image.filter_by_location(location)
+        message = f"{location}"
+
+        return render(request, 'personalgallery/searchlocation.html', {"message": message, "places": searched_locations})
+
+    else:
+        message="You have not searched any location"
+        return render(request, 'personalgallery/searchlocation.html', {"message":message})
