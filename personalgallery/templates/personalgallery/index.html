@@ -23,7 +23,7 @@
             {% include 'navbar.html' %}
             {% for image in images %}
             <div class="col-md-4 image-card">
-                <a href="#"><img src="{{ image.image.url }}" alt="{{ image.description }}" class="img-responsive"></a>
+                <a href="{% url 'viewPhoto' image.id %}"><img src="{{ image.image.url }}" alt="{{ image.description }}" class="img-responsive"></a>
                 <!-- <h3>Shot at: {{image.location}} for {{image.category}} Category</h3> -->
             </div>
             <div id="indexoneimage">

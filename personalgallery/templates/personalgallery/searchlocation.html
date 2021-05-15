@@ -1,14 +1,15 @@
 {% extends 'personalgallery/base.html' %}
-{% block content %}
-<div class="container-fluid">
-    <div class="row">
+{% block content %} 
+<div class="container-fluid search-all">
+    {% include 'navbar.html'%}
+    <div class="row search-content">
         {% if places %}
         <h4>Found {{places|length}} of {{message}} category</h4>
         {% else %}
         <h4>Found 0 images of the {{message}} category</h4>
         {%endif%}
     </div>
-    <div class="row">
+    <div class="row search-img">
         {% if places %}
         {% for place in places %}
         <div class="col-md-4 image-card">
