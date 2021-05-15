@@ -11,8 +11,10 @@
             {% include 'navbar.html' %}
             {% for image in images %}
             <div class="col-md-4 image-card">
-                <img src="{{ image.image.url }}" alt="{{ image.description }}" class="img-responsive">
+                <a href="{% url 'viewPhoto' image.id %}"><img src="{{ image.image.url }}" alt="{{ image.description }}" class="img-responsive"></a>
             </div>
+            {% empty %}
+            <h3><strong><em>No Photos</em></strong></h3>
             {% endfor %}       
 
         </div>

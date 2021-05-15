@@ -9,6 +9,10 @@ def index(request):
     categories=Category.objects.all()
     return render(request, 'personalgallery/index.html', {"images":images, "categories": categories})
 
+def viewPhoto(request, pk):
+    image=Image.objects.get(id=pk)  
+    return render(request, 'personalgallery/oneimage.html', {"image": image})
+
 def show_category(request):
     if 'article' in request.GET and request.GET['article']:
         category=request.GET.get("article")
