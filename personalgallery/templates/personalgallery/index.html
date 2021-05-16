@@ -16,7 +16,7 @@
       
             </form>
             {% for location in location %}
-                <a class="nav-item nav-link" routerLink="/repos" routerLinkActive='active' id="repos" href="{% url 'indexpage' %}?location={{location.name }}">{{location.name}}</a>
+                <a class="nav-item nav-link" routerLink="/repos" routerLinkActive='active' id="repos" href="{% url 'indexpage' %}?location={{location.name }}" style="font-weight: bold;">{{location.name}}</a>
             {% endfor %}
         </div>
         <div class="col-md-9">
